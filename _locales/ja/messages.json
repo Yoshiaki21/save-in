@@ -1,0 +1,629 @@
+{
+  "extensionName": {
+    "message": "Save In…",
+    "description": "Name of the extension."
+  },
+
+  "extensionDescription": {
+    "message": "画像・動画・音声・リンク・選択テキスト・ページを、デフォルトダウンロード先配下の指定フォルダに保存します。",
+    "description": "Description of the add-on."
+  },
+
+  "translationCredits": {
+    "message": "​",
+    "description": "Credits for translations. Leave ​ for blank."
+  },
+
+  "genericUnknownError": {
+    "message": "不明なエラー",
+    "description": "A generic error message used as a fallback"
+  },
+
+  "contextMenuItemOptions": {
+    "message": "オプション",
+    "description": "Title of context menu item that opens the options menu when clicked."
+  },
+
+  "contextMenuExclusive": {
+    "message": "Save In ルート…",
+    "description": "Name for menu item when in exclusive mode."
+  },
+
+  "contextMenuRoot": {
+    "message": "Save In…",
+    "description": "Name for root context menu item."
+  },
+
+  "contextMenuLastUsed": {
+    "message": "最後に使った場所",
+    "description": "Placeholder title for last used option."
+  },
+
+  "contextMenuContextMedia": {
+    "message": "メディア",
+    "description": "Indicator that Save In is saving just media."
+  },
+
+  "contextMenuContextMediaOrLink": {
+    "message": "メディアまたはリンク",
+    "description": "Indicator that Save In is saving a media or link."
+  },
+
+  "contextMenuContextSelection": {
+    "message": "選択テキスト",
+    "description": "Indicator that Save In is saving a selection."
+  },
+
+  "contextMenuContextPage": {
+    "message": "ページ",
+    "description": "Indicator that Save In is saving a page."
+  },
+
+  "contextMenuShowDefaultFolder": {
+    "message": "デフォルトフォルダを開く",
+    "description": "Title of context menu item that opens the default downloads directory in the system file manager when clicked."
+  },
+
+  "notificationSuccessTitle": {
+    "message": "保存完了",
+    "description": "Notification title for a successful download"
+  },
+
+  "notificationFailureTitle": {
+    "message": "$FILENAME$ の保存に失敗しました。",
+    "description": "Notification title for a failed download",
+    "placeholders": {
+      "filename": {
+        "content": "$1",
+        "example": "my_filename.jpg"
+      }
+    }
+  },
+
+  "notificationRuleMatchedTitle": {
+    "message": "Save In: ルールが一致",
+    "description": "Notification title for a rule match"
+  },
+
+  "notificationRuleMatchFailedExclusiveTitle": {
+    "message": "Save In: ルーティングまたはリネームに失敗",
+    "description": "Notification title for no rule matches when in exclusive mode"
+  },
+
+  "notificationRuleMatchFailedExclusiveMessage": {
+    "message": "$URL$ に一致するルールが見つかりません",
+    "description": "Notification title for no rule matches when in exclusive mode",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "www.google.jpg"
+      }
+    }
+  },
+
+  "ruleMissingMatcher": {
+    "message": "ルールにはマッチャー句が1つ以上必要です",
+    "description": "Error message for missing matcher in rule"
+  },
+
+  "ruleCaptureMissingMatcher": {
+    "message": "キャプチャ句のターゲットにマッチャーがありません",
+    "description": "Error message for capture targeting missing matcher"
+  },
+
+  "ruleMissingCapture": {
+    "message": "キャプチャ変数を使うにはキャプチャ句が必要です",
+    "description": "Error message for missing capture clause in rule"
+  },
+
+  "ruleMultipleCapture": {
+    "message": "キャプチャ句は1つだけ指定できます",
+    "description": "Error message for multiple capture clauses in rule"
+  },
+
+  "ruleMissingInto": {
+    "message": "ルールにはinto句が1つ以上必要です",
+    "description": "Error message for missing into clause in rule"
+  },
+
+  "ruleExtraInto": {
+    "message": "into句は1つだけ指定できます",
+    "description": "Error message for multiple into clauses in rule"
+  },
+
+  "ruleUnknownMatcher": {
+    "message": "不明なマッチャー",
+    "description": "Error message for an unknown matcher"
+  },
+
+  "ruleInvalidRegex": {
+    "message": "無効な正規表現",
+    "description": "Error message for a rule with invalid regex"
+  },
+
+  "ruleBadClause": {
+    "message": "不正な句",
+    "description": "Error message for lines in rule with syntax errors"
+  },
+
+  "rulePathInvalidCharacter": {
+    "message": "パスに使用できない文字が含まれています",
+    "description": "Error message for rules with invalid characters in path"
+  },
+
+  "rulePathStartsWithDot": {
+    "message": "パスを .. または / で始めることはできません",
+    "description": "Error message for paths in routing rules that start with invalid characters"
+  },
+
+  "tabstripMenuSelectedTab": {
+    "message": "選択タブを保存",
+    "description": "Tabstrip context menu label for saving selected tab"
+  },
+
+  "tabstripMenuMultipleSelectedTab": {
+    "message": "選択中のタブを保存（$COUNT$ 個）",
+    "description": "Tabstrip context menu label for saving one or more highlighted tab",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+
+  "tabstripMenuSaveChildrenTabs": {
+    "message": "このタブから開いた子タブを保存",
+    "description": "Tabstrip context menu label for saving child tabs"
+  },
+
+  "tabstripMenuSaveRightTabs": {
+    "message": "このタブ以降を全て保存",
+    "description": "Tabstrip context menu label for saving tabs to the right (inclusive)"
+  },
+
+  "tabstripMenuSaveRightTabsMatched": {
+    "message": "このタブ以降を全て保存（ルート一致必須）",
+    "description": "Tabstrip context menu label for saving tabs to the right (inclusive) that match a route"
+  },
+
+  "o_sDownloads": {
+    "message": "ダウンロード",
+    "description": "o prefixes are for options page text, s prefix are for section/subsection titles"
+  },
+
+  "o_sDirectories": {
+    "message": "ダウンロード先"
+  },
+
+  "o_sBehavior": {
+    "message": "動作"
+  },
+
+  "o_sDynamicDownloads": {
+    "message": "動的ダウンロード（上級者向け）"
+  },
+
+  "o_sRenameAndRouteDownloads": {
+    "message": "ダウンロードのリネームとルーティング"
+  },
+
+  "o_sNotifications": {
+    "message": "通知"
+  },
+
+  "o_sSaveAsShortcuts": {
+    "message": "ショートカットとして保存"
+  },
+
+  "o_sKeyboardShortcuts": {
+    "message": "キーボードショートカット"
+  },
+
+  "o_sContextMenu": {
+    "message": "コンテキストメニュー"
+  },
+
+  "o_sClickToSave": {
+    "message": "クリックして保存"
+  },
+
+  "o_sMoreOptions": {
+    "message": "詳細オプション"
+  },
+
+  "o_lVariableList": {
+    "message": "変数リスト",
+    "description": "l prefixes are for labels"
+  },
+
+  "o_lClauseList": {
+    "message": "句リスト"
+  },
+
+  "o_lPopout": {
+    "message": "ポップアウト"
+  },
+
+  "o_lGithub": {
+    "message": "GitHub"
+  },
+
+  "o_lChangelog": {
+    "message": "更新履歴"
+  },
+
+  "o_lGuideCreateMenuItems": {
+    "message": "ガイド: メニュー項目の作成"
+  },
+
+  "o_lGuideSymlink": {
+    "message": "ガイド: デフォルト保存先外へのシンボリックリンク"
+  },
+
+  "o_lGuideRouting": {
+    "message": "ガイド: リネームとルーティング"
+  },
+
+  "o_lDirectoryInstructionOnePerLine": {
+    "message": "デフォルトのダウンロード先からの相対パスを1行1つで入力。"
+  },
+
+  "o_lDirectoryInstructionDot": {
+    "message": "デフォルトのダウンロード先に保存。"
+  },
+
+  "o_lDirectoryInstructionComment": {
+    "message": "行末に追記するとコメントになります。"
+  },
+
+  "o_lDirectoryInstructionSymlink": {
+    "message": "デフォルト保存先外に保存するにはシンボリックリンクが必要です。"
+  },
+
+  "o_lRoutingInstruction": {
+    "message": "ダウンロードの自動ルーティングやファイルのリネームを設定します。ルールは空行で区切ります。詳細はガイドを参照。"
+  },
+
+  "o_lRoutingLastDownload": {
+    "message": "最後のダウンロード"
+  },
+
+  "_o_lRoutingRenamedTo": {
+    "message": "リネーム先"
+  },
+
+  "o_lRoutingLastDownloadEmpty": {
+    "message": "まだなし"
+  },
+
+  "o_lRoutingRenamedTo": {
+    "message": "リネーム先"
+  },
+
+  "o_lRoutingNoMatches": {
+    "message": "一致なし"
+  },
+
+  "o_lRoutingCaptureGroups": {
+    "message": "キャプチャグループ"
+  },
+
+  "o_lRoutingVariables": {
+    "message": "変数"
+  },
+
+  "o_lRoutingVariablesClickToSee": {
+    "message": "クリックして表示"
+  },
+
+  "o_lRoutingLastDownloadHelp": {
+    "message": "最後にダウンロードしたファイルに現在のルールを適用してテスト"
+  },
+
+  "o_lRoutingTemplates": {
+    "message": "テンプレート"
+  },
+
+  "o_lAccessKeysInstruction": {
+    "message": "Save In メニュー項目のアクセスキーを設定します。Chrome または Firefox 63以上。"
+  },
+
+  "o_cLastUsedMenu": {
+    "message": "最後に使った項目を表示",
+    "description": "c prefixes are for controls (buttons, etc)"
+  },
+
+  "o_cSaveLinks": {
+    "message": "リンクの保存を有効にする（ソースを優先）"
+  },
+
+  "o_cPreferLinks": {
+    "message": "常にソースよりリンクを優先"
+  },
+
+  "o_cSaveText": {
+    "message": "選択テキストを\".selection.txt\"として保存する"
+  },
+
+  "o_cSavePage": {
+    "message": "現在のページを保存する"
+  },
+
+  "o_cSavePageHelp": {
+    "message": "外部リソースは保存されません"
+  },
+
+  "o_cSaveTabstrip": {
+    "message": "タブバーからの保存を有効にする"
+  },
+
+  "o_cSaveTabstripHelp": {
+    "message": "タブ・タブグループ・右側のタブを保存"
+  },
+
+  "o_cOpenDialog": {
+    "message": "保存時にダイアログを開く"
+  },
+
+  "o_cOpenDialogNoExt": {
+    "message": "拡張子がない場合はダイアログを開く"
+  },
+
+  "o_cOpenDialogShift": {
+    "message": "SHIFT を押しながらクリックするとダイアログを開く"
+  },
+
+  "o_cOpenDialogOnFailure": {
+    "message": "ダウンロード失敗時にダイアログを開く"
+  },
+
+  "o_cDupeUniquify": {
+    "message": "連番追加"
+  },
+
+  "o_cDupeOverwrite": {
+    "message": "上書き"
+  },
+
+  "o_cDupePrompt": {
+    "message": "確認ダイアログ"
+  },
+
+  "o_cDupeFilename": {
+    "message": "ファイル名が重複した場合"
+  },
+
+  "o_cOpenDialogIfNoRulesMatch": {
+    "message": "ルールが一致しない場合はダイアログを開く"
+  },
+
+  "o_cExclusiveMode": {
+    "message": "ルーティング・リネームルールのみ使用"
+  },
+
+  "o_cExclusiveModeHelp": {
+    "message": "2クリックダウンロードのサブメニューを無効にし、デフォルト保存先からの相対パスに保存"
+  },
+
+  "o_cNotifySuccess": {
+    "message": "ダウンロード成功時に通知"
+  },
+
+  "o_cNotifyFailure": {
+    "message": "ダウンロード失敗時に通知"
+  },
+
+  "o_cNotifyMatch": {
+    "message": "ルール一致時に通知"
+  },
+
+  "o_cNotifyCloseAfter": {
+    "message": "通知を自動で閉じるまでの時間"
+  },
+
+  "o_cNotifyCloseAfterHelp": {
+    "message": "1秒 = 1000ms。OS/ブラウザの通知表示時間を超えることはありません。"
+  },
+
+  "o_cSaveShortcutsAs": {
+    "message": "ショートカットの保存形式"
+  },
+
+  "o_cSaveShortcutsTypeHtml": {
+    "message": "HTML リダイレクト"
+  },
+
+  "o_cSaveShortcutsTypeMac": {
+    "message": "Mac .url"
+  },
+
+  "o_cSaveShortcutsTypeWindows": {
+    "message": "Windows .url"
+  },
+
+  "o_cSaveShortcutsTypeFreedesktop": {
+    "message": "Freedesktop .desktop"
+  },
+
+  "o_cSaveShortcutsMediaInstead": {
+    "message": "メディアをショートカットとして保存"
+  },
+
+  "o_cSaveShortcutsLinksInstead": {
+    "message": "リンクをショートカットとして保存"
+  },
+
+  "o_cSaveShortcutsPagesInstead": {
+    "message": "ページをショートカットとして保存"
+  },
+
+  "o_cSaveShortcutsTabsInstead": {
+    "message": "タブをショートカットとして保存（タブの右クリックから）"
+  },
+
+  "o_cKeyboardShortcutSaveInMenu": {
+    "message": "Save In コンテキストメニュー"
+  },
+
+  "o_cKeyboardShortcutSubmenu": {
+    "message": "最後に使ったサブメニュー項目"
+  },
+
+  "o_cKeyboardShortcutNumbers": {
+    "message": "コンテキストメニュー項目に数字キーショートカットを追加"
+  },
+
+  "o_cKeyboardShortcutClickToSave": {
+    "message": "クリックして保存を有効にする"
+  },
+
+  "o_cKeyboardShortcutClickToHelp": {
+    "message": "Alt（デフォルト）を押しながら画像・メディアをクリックすると最後に使ったフォルダまたはデフォルト保存先に保存します。クリックイベントを検知するためページにスクリプトを挿入します。使用できない変数があります。ページのリロードが必要です。"
+  },
+
+  "o_cKeyboardShotcutKeycode": {
+    "message": "キーコード"
+  },
+
+  "o_cKeyboardShortcutModifierLeftClick": {
+    "message": "左クリック"
+  },
+
+  "o_cKeyboardShortcutModifierMiddleClick": {
+    "message": "中クリック"
+  },
+
+  "o_cKeyboardShortcutModifierRightClick": {
+    "message": "右クリック"
+  },
+
+  "o_cKeyboardShortcutModifierHelp": {
+    "message": "クリック保存の修飾キーコード。ページのリロードが必要です。"
+  },
+
+  "o_cRestoreDefaults": {
+    "message": "デフォルトに戻す"
+  },
+
+  "o_cTruncatePath": {
+    "message": "パスの各要素をこの文字数に切り詰める"
+  },
+
+  "o_cTruncatePathHelp": {
+    "message": "0 = 切り詰めなし"
+  },
+
+  "o_cReplaceInvalidCharsWith": {
+    "message": "使用できない文字をこれに置換"
+  },
+
+  "o_cReplaceInvalidCharsWithHelp": {
+    "message": "空白にすると削除します。使用できない置換文字は無視されます。"
+  },
+
+  "o_cFetchViaContentScript": {
+    "message": "コンテンツスクリプト経由での取得を有効にする"
+  },
+
+  "o_cFetchViaContentScriptHelp": {
+    "message": "ダウンロードに問題がなければ有効にしないでください。拡張機能ではなくコンテンツページからダウンロードし、ページ自身のヘッダーを送信します。一部サイト（例: pixiv.net）ではサーバー側の保護を回避するために必要です。速度が遅く失敗しやすくなります。このモードでは成功/失敗通知は機能しません。ページのリロードが必要です。"
+  },
+
+  "o_cFetchViaFetchAPI": {
+    "message": "Fetch API 経由での取得を有効にする"
+  },
+
+  "o_cFetchViaFetchAPIHelp": {
+    "message": "ダウンロードに問題がなければ有効にしないでください。拡張機能のダウンロードAPIの代わりにHTML Fetch APIを使用します。一部サイト（例: Instagram）はFirefoxのダウンロードAPIと非互換です。"
+  },
+
+  "o_cSetRefererHeader": {
+    "message": "\"Referer\" ヘッダーがない場合はページURLに設定"
+  },
+
+  "o_cSetRefererHeaderHelp": {
+    "message": "ダウンロードに問題がなければ有効にしないでください。コンテンツスクリプトを先にお試しください。一部サイト（例: pixiv.net）はサーバーでHTTP Refererヘッダーを確認します。有効にするとRefererヘッダーがない場合にページURLを設定します。"
+  },
+
+  "o_cSetRefererHeaderFilter": {
+    "message": "以下のサイトにのみ Referer ヘッダーを設定"
+  },
+
+  "o_cSetRefererHeaderFilterHelp": {
+    "message": "マッチパターンのホワイトリスト（1行1つ）。このリストに一致するダウンロード（ソースURL）のみヘッダーを変更します。"
+  },
+
+  "o_cImportSettings": {
+    "message": "設定のインポート"
+  },
+
+  "o_cExportSettings": {
+    "message": "設定のエクスポート"
+  },
+
+  "o_cDebugMode": {
+    "message": "デバッグログを有効にする"
+  },
+
+  "o_cLastSavedAt": {
+    "message": "最後の保存: "
+  },
+
+  "o_cLastSavedAtNever": {
+    "message": "なし"
+  },
+
+  "o_lSubdirectoryInstructionComment": {
+    "message": "行頭に追記すると矢印の数に応じたネストされたサブメニューを作成します。"
+  },
+
+  "notificationLinkPreferred": {
+    "message": "リンクをダウンロードしました",
+    "description": "Notification title when link was downloaded over a source"
+  },
+
+  "o_cPreferLinksFilterEnabled": {
+    "message": "以下のURLに一致するページではリンクを優先"
+  },
+
+  "o_cPreferLinksFilter": {
+    "message": "URLフィルター"
+  },
+
+  "o_cPreferLinksFilterHelp": {
+    "message": "ページURLに一致させる正規表現を1行1つで入力。"
+  },
+
+  "notificationBadPreferLinksPattern": {
+    "message": "リンク優先の正規表現が無効です"
+  },
+
+  "o_cNotifyLinkPreferred": {
+    "message": "ソースの代わりにリンクがダウンロードされたときに通知"
+  },
+
+  "o_cCloseTabOnSave": {
+    "message": "保存対象のタブを閉じる"
+  },
+
+  "o_pageTitle": {
+    "message": "設定 — Save In",
+    "description": "Title of the options page tab"
+  },
+
+  "o_badgeExperimental": {
+    "message": "試験的",
+    "description": "Badge label for experimental features"
+  },
+
+  "o_sHistory": {
+    "message": "履歴",
+    "description": "Section heading for download history"
+  },
+
+  "o_cDeleteHistory": {
+    "message": "履歴を削除",
+    "description": "Button label to delete download history"
+  }
+}

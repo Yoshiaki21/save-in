@@ -605,5 +605,25 @@
 
   "o_cCloseTabOnSave": {
     "message": "Close tabs marked for saving"
+  },
+
+  "o_pageTitle": {
+    "message": "Settings — Save In",
+    "description": "Title of the options page tab"
+  },
+
+  "o_badgeExperimental": {
+    "message": "Experimental",
+    "description": "Badge label for experimental features"
+  },
+
+  "o_sHistory": {
+    "message": "History",
+    "description": "Section heading for download history"
+  },
+
+  "o_cDeleteHistory": {
+    "message": "Delete history",
+    "description": "Button label to delete download history"
   }
 }
