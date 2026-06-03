@@ -7,16 +7,16 @@
 
   "applications": {
     "gecko": {
-      "id": "{72d92df5-2aa0-4b06-b807-aa21767545cd}"
+      "id": "lucifarzero.mobile@gmail.com"
     }
   },
 
   "developer": {
-    "name": "Ng Guoyou",
-    "url": "https://github.com/gyng/save-in"
+    "name": "yoshiaki21",
+    "url": "https://github.com/Yoshiaki21/save-in"
   },
 
-  "homepage_url": "https://github.com/gyng/save-in",
+  "homepage_url": "https://github.com/Yoshiaki21/save-in",
 
   "background": {
     "scripts": [
