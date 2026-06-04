@@ -47,10 +47,41 @@ chrome.runtime.sendMessage(
       const setupKeyboardListeners = (
         shortcutOptions = { combo: [18], button: "LEFT_CLICK" }
       ) => {
+        // Standard modifier keys that can be read directly from MouseEvent flags
+        const MOUSE_EVENT_MODIFIER_MAP = {
+          16: (e) => e.shiftKey,
+          17: (e) => e.ctrlKey,
+          18: (e) => e.altKey,
+          91: (e) => e.metaKey,
+          92: (e) => e.metaKey,
+          93: (e) => e.metaKey,
+        };
+
+        const combo = shortcutOptions.combo.map(Number);
         let active = {};
 
-        const isKeyboardComboActive = (combo, activeKeys) =>
-          combo.map((code) => activeKeys[code]).every((code) => code === true);
+        // Only track keydown/keyup for non-standard modifier keys to avoid
+        // state drift caused by Alt menu activation or focus loss
+        if (combo.some((code) => !MOUSE_EVENT_MODIFIER_MAP[code])) {
+          window.addEventListener("keydown", (e) => {
+            active[e.keyCode] = true;
+          });
+
+          window.addEventListener("keyup", (e) => {
+            active[e.keyCode] = false;
+          });
+
+          window.addEventListener("focus", () => {
+            active = {};
+          });
+        }
+
+        const isKeyboardComboActive = (e) =>
+          combo.every((code) =>
+            MOUSE_EVENT_MODIFIER_MAP[code]
+              ? MOUSE_EVENT_MODIFIER_MAP[code](e)
+              : active[code] === true
+          );
 
         // https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/buttons
         const isMouseButtonActive = (target, buttons) => {
@@ -71,24 +102,34 @@ chrome.runtime.sendMessage(
           return false;
         };
 
-        window.addEventListener("keydown", (e) => {
-          active[e.keyCode] = true;
-        });
+        // Resolve media src through overlay/wrapper elements using elementsFromPoint
+        const resolveMediaSource = (e) => {
+          const directSrc = e.target.currentSrc || e.target.src;
+          if (directSrc) {
+            return directSrc;
+          }
 
-        window.addEventListener("keyup", (e) => {
-          active[e.keyCode] = false;
-        });
+          const mediaEl =
+            e.target.closest && e.target.closest("img, video, audio");
+          if (mediaEl) {
+            const ancestorSrc = mediaEl.currentSrc || mediaEl.src;
+            if (ancestorSrc) {
+              return ancestorSrc;
+            }
+          }
 
-        window.addEventListener("focus", () => {
-          active = {};
-        });
+          const el = document
+            .elementsFromPoint(e.clientX, e.clientY)
+            .find(({ currentSrc, src }) => currentSrc || src);
+          return el ? el.currentSrc || el.src : null;
+        };
 
         window.addEventListener("mousedown", (e) => {
           if (
             isMouseButtonActive(shortcutOptions.button, e.buttons) &&
-            isKeyboardComboActive(shortcutOptions.combo, active)
+            isKeyboardComboActive(e)
           ) {
-            const source = e.target.currentSrc || e.target.src;
+            const source = resolveMediaSource(e);
 
             if (source) {
               e.preventDefault();
