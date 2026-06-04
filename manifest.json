@@ -2,22 +2,16 @@
   "manifest_version": 2,
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
-  "version": "3.7.3.1",
+  "version": "3.7.3.3",
   "default_locale": "en",
-
   "applications": {
-    "gecko": {
-      "id": "lucifarzero.mobile@gmail.com"
-    }
+    "gecko": {}
   },
-
   "developer": {
     "name": "yoshiaki21",
     "url": "https://github.com/Yoshiaki21/save-in"
   },
-
   "homepage_url": "https://github.com/Yoshiaki21/save-in",
-
   "background": {
     "scripts": [
       "src/vendor/browser-polyfill.js",
@@ -38,14 +32,16 @@
       "src/index.js"
     ]
   },
-
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["src/content/content.js"]
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/content/content.js"
+      ]
     }
   ],
-
   "permissions": [
     "<all_urls>",
     "activeTab",
@@ -57,16 +53,19 @@
     "webRequest",
     "webRequestBlocking"
   ],
-
   "options_ui": {
     "browser_style": true,
     "chrome_style": true,
     "page": "src/options/options.html"
   },
-
   "icons": {
     "48": "icons/ic_archive_black_48px.png",
     "96": "icons/ic_archive_black_96px.png",
     "128": "icons/ic_archive_black_128px.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{b6fcb779-b817-4c30-8e82-0a316c9c40b5}"
+    }
   }
 }
