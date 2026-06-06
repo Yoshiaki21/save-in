@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
-  "version": "3.7.3.4",
+  "version": "3.7.3.5",
   "default_locale": "en",
   "applications": {
     "gecko": {}
@@ -66,6 +66,7 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "{b6fcb779-b817-4c30-8e82-0a316c9c40b5}"
+      "update_url": "https://github.com/Yoshiaki21/firefox-addons/blob/main/save-in/updates.json"
     }
   }
 }
