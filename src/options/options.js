@@ -201,7 +201,7 @@ const saveOptions = (e) => {
       return Object.assign(acc, { [val.name]: optionValue });
     }, {});
 
-    browser.storage.local.set(toSave).then(() => {
+    browser.storage.sync.set(toSave).then(() => {  // localからsyncに変更（複数PC間で設定を同期）
       browser.runtime.getBackgroundPage().then((w) => {
         w.reset();
       });
@@ -241,7 +241,7 @@ const restoreOptionsHandler = (result, schema) => {
 const restoreOptions = () =>
   getOptionsSchema.then((schema) => {
     const keys = schema.keys.map((o) => o.name);
-    browser.storage.local
+    browser.storage.sync  // localからsyncに変更（複数PC間で設定を同期）
       .get(keys)
       .then((loaded) => restoreOptionsHandler(loaded, schema));
   });
@@ -272,7 +272,7 @@ document.querySelector("#reset").addEventListener("click", (e) => {
     const reset = w.confirm("Reset settings to defaults?");
 
     if (reset) {
-      browser.storage.local.clear().then(() => {
+      browser.storage.sync.clear().then(() => {  // localからsyncに変更（複数PC間で設定を同期）
         document.querySelector("#lastSavedAt").textContent =
           new Date().toLocaleTimeString();
 
@@ -358,7 +358,7 @@ const showJson = (obj) => {
 document.querySelector("#settings-export").addEventListener("click", () => {
   getOptionsSchema.then((schema) => {
     const keys = schema.keys.map((o) => o.name);
-    browser.storage.local.get(keys).then((loaded) => showJson(loaded));
+    browser.storage.sync.get(keys).then((loaded) => showJson(loaded));  // localからsyncに変更（複数PC間で設定を同期）
   });
 });
 

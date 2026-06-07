@@ -145,7 +145,7 @@ const OptionsManagement = {
 };
 
 OptionsManagement.loadOptions = () =>
-  browser.storage.local
+  browser.storage.sync  // localからsyncに変更（複数PC間で設定を同期）
     .get(OptionsManagement.getKeys())
     .then((loadedOptions) => {
       if (loadedOptions.debug) {
